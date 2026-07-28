@@ -1,3 +1,11 @@
+import os
+import sys
+
+# sys.path 설정 (Vercel 서벌리스 환경 모듈 임포트 방어)
+backend_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if backend_dir not in sys.path:
+    sys.path.insert(0, backend_dir)
+
 from fastapi import APIRouter, HTTPException
 from models.schemas import ConvertRequest, ConvertResponse
 from services.tone_converter import tone_converter_service

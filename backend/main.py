@@ -1,4 +1,11 @@
 import os
+import sys
+
+# sys.path 설정 (Vercel 서벌리스 모듈 임포트 방어)
+current_dir = os.path.dirname(os.path.abspath(__file__))
+if current_dir not in sys.path:
+    sys.path.insert(0, current_dir)
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
@@ -12,7 +19,7 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# CORS 설정
+# CORS 설정 (전면 허용)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -30,7 +37,7 @@ async def health_check():
     return HealthCheckResponse(status="ok")
 
 # 프론트엔드 정적 파일 및 메인 페이지 라우팅
-frontend_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "frontend"))
+frontend_dir = os.path.abspath(os.path.join(current_dir, "..", "frontend"))
 if os.path.exists(frontend_dir):
     css_dir = os.path.join(frontend_dir, "css")
     js_dir = os.path.join(frontend_dir, "js")
