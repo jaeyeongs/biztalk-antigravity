@@ -83,24 +83,24 @@ AI도 사람도 "끝"의 기준이 명확해야 헤매지 않습니다. 기준 �
 
 ### 백엔드
 
-- [ ] FastAPI 서버가 로컬에서 정상 실행된다 (`uvicorn main:app`)
-- [ ] Health Check 기능이 존재해야 한다
-- [ ] `POST /api/convert` 엔드포인트가 존재한다
-- [ ] Upstage Solar-Pro3 API 호출이 정상 작동한다
-- [ ] 수신 대상(4종)에 따라 다른 프롬프트가 적용된다
-- [ ] CORS 설정이 되어 있어 프론트엔드에서 호출 가능하다
-- [ ] `.env` 파일로 API 키를 관리하고, `.gitignore`에 등록되어 있다
-- [ ] FastAPI 서버에 Staic Page(`index.html`) 라우팅 기능이 있어야 한다
-- [ ] Swagger UI(/docs)를 통해 API 문서를 브라우저에서 확인할 수 있다
+- [x] FastAPI 서버가 로컬에서 정상 실행된다 (`uvicorn main:app`)
+- [x] Health Check 기능이 존재해야 한다
+- [x] `POST /api/convert` 엔드포인트가 존재한다
+- [x] Upstage Solar-Pro3 API 호출이 정상 작동한다
+- [x] 수신 대상(4종)에 따라 다른 프롬프트가 적용된다
+- [x] CORS 설정이 되어 있어 프론트엔드에서 호출 가능하다
+- [x] `.env` 파일로 API 키를 관리하고, `.gitignore`에 등록되어 있다
+- [x] FastAPI 서버에 Staic Page(`index.html`) 라우팅 기능이 있어야 한다
+- [x] Swagger UI(/docs)를 통해 API 문서를 브라우저에서 확인할 수 있다
 
 ### 프론트엔드
 
-- [ ] 텍스트 입력창이 있다
-- [ ] 수신 대상 선택 버튼이 있다 (4종)
-- [ ] [변환하기] 버튼 클릭 시 API를 호출한다
-- [ ] 처리 중 로딩 표시가 나타난다
-- [ ] 변환 결과가 화면에 출력된다
-- [ ] [복사하기] 버튼이 작동한다
+- [x] 텍스트 입력창이 있다
+- [x] 수신 대상 선택 버튼이 있다 (4종)
+- [x] [변환하기] 버튼 클릭 시 API를 호출한다
+- [x] 처리 중 로딩 표시가 나타난다
+- [x] 변환 결과가 화면에 출력된다
+- [x] [복사하기] 버튼이 작동한다
 
 ### 배포
 
@@ -213,8 +213,6 @@ biztalk_antigravity/
 │   │   └── templates.py        # 대상별 프롬프트 템플릿
 │   ├── models/
 │   │   └── schemas.py          # Pydantic 요청/응답 스키마
-│   ├── .env                    # API 키 (git 제외)
-│   ├── .env.example            # 환경 변수 샘플 (git 포함)
 │   └── requirements.txt
 │
 ├── frontend/
@@ -291,7 +289,8 @@ FastAPI는 Swagger UI를 기본 제공하므로 서버가 기동 중인 상태�
 
 ## 8. 단계별 구현 순서
 
-### [ ] STEP 1. 환경 준비
+### [x] STEP 1. 환경 준비
+
 
 1. GitHub 레포지토리 생성 (`biztalk_antigravity`)
 2. 디렉토리 구조 생성
@@ -302,7 +301,7 @@ FastAPI는 Swagger UI를 기본 제공하므로 서버가 기동 중인 상태�
 
 ---
 
-### [ ] STEP 2. 백엔드 구현 
+### [x] STEP 2. 백엔드 구현 
 
 > 원칙 2 적용: 구현 전 Solar-Pro3 연동 방식을 먼저 확인하세요.
 
@@ -351,7 +350,7 @@ app.include_router(convert.router, prefix="/api")
 
 ---
 
-### [ ] STEP 3. 프론트엔드 구현
+### [x] STEP 3. 프론트엔드 구현
 
 **구현 순서**
 
